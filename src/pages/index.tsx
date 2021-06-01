@@ -17,9 +17,9 @@ const Home: React.FC = (): JSX.Element => {
           <h1>Hi, I'm Naomi!</h1>
           <p>I'm a designer and developer who specializes in building beautiful, interactive websites and web apps.</p>
           <HeroButtons>
-            <a href="https://github.com/gnoem" aria-label="Github"><Github /></a>
-            <a href="https://codepen.io/gnomey" aria-label="Codepen"><Codepen /></a>
-            <a href="mailto:contact@ngw.dev" aria-label="Email"><Envelope /></a>
+            <a href="https://github.com/gnoem" aria-label="Github" target="_blank"><Github /></a>
+            <a href="https://codepen.io/gnomey" aria-label="Codepen" target="_blank"><Codepen /></a>
+            <a href="mailto:contact@ngw.dev" aria-label="Email" target="_blank"><Envelope /></a>
           </HeroButtons>
         </Hero>
         <Content>

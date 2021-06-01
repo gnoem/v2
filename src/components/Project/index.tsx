@@ -73,7 +73,7 @@ const OtherProject: React.FC<IOtherProjectOwnProps> = ({ title, image, blurb, li
           <Title link={links.primary}>{title}</Title>
           <Blurb><p>{blurb}</p></Blurb>
         </div>
-        <a href={links.primary}>&raquo; View live</a>
+        <a href={links.primary} target="_blank">&raquo; View live</a>
       </Description>
     </div>
   );
@@ -82,7 +82,7 @@ const OtherProject: React.FC<IOtherProjectOwnProps> = ({ title, image, blurb, li
 const Preview: React.FC<{ image: string; link: string; title: string; }> = ({ image, link, title }): JSX.Element => {
   return (
     <div className={styles.preview}>
-      <a href={link}>
+      <a href={link} target="_blank">
         <img src={image} alt={`${title} preview`} />
       </a>
     </div>

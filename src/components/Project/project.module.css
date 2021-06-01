@@ -4,6 +4,14 @@
   --text-color: #1C6D6E;
 }
 
+.Project a, .OtherProjects a {
+  font-weight: normal;
+}
+
+.Project a::before, .OtherProjects a::before {
+  content: unset;
+}
+
 .description h4 a {
   color: var(--text-color);
   font-weight: 600;

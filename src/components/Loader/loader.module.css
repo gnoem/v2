@@ -50,8 +50,8 @@
 }
 
 @keyframes shrink {
-  from {opacity: 1; transform: scale(1);}
-  to {opacity: 0; transform: scale(0);}
+  from {opacity: 1; transform: scale(1) rotate(-90deg);}
+  to {opacity: 0; transform: scale(0) rotate(-90deg);}
 }
 
 @keyframes getSoBig {

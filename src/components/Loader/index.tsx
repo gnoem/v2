@@ -24,7 +24,7 @@ const LoadingAnimation: React.FC = (): JSX.Element => {
   const circumference = radius * 2 * Math.PI;
   const [dashOffset, setDashOffset] = useState(circumference);
   useEffect(() => {
-    setDashOffset(0);
+    setTimeout(() => setDashOffset(0), 1);
   }, []);
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width={radius * 2} height={radius * 2}>

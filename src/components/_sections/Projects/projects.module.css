@@ -1,6 +1,7 @@
 .Projects {
   --header-color: #329f95;
   --header-shadow: #9ee8d9;
+  --font-color: #067D7F;
 }
 
 .Projects h2 {
@@ -16,6 +17,33 @@
   border-bottom: 1px solid var(--header-shadow);
 }
 
+.projectNote {
+  margin: 2rem 0 3rem;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-left: 0.5rem solid var(--header-shadow);
+  box-shadow: 0.5rem 0.5rem 1rem var(--header-shadow);
+  padding: 1rem 1.5rem;
+  color: var(--font-color);
+}
+
+.projectNote svg {
+  height: 1rem;
+  fill: var(--font-color);
+}
+
+.projectNote b {
+  color: #1C6D6E;
+}
+
+.projectNote ul {
+  margin-bottom: 0.5rem;
+}
+
+.projectNote ul li + li {
+  margin-top: 0.5rem;
+}
+
 .wavy {
   transform: scale(-1);
   margin-top: -2px;
@@ -28,6 +56,14 @@
   }
   .Projects h3 {
     font-size: 2rem;
+  }
+  .projectNote {
+    padding: 1rem;
+    font-size: 0.9rem;
+    hyphens: auto;
+  }
+  .projectNote ul {
+    padding-left: 1.5rem;
   }
 }
 
