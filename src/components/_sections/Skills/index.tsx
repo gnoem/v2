@@ -5,7 +5,7 @@ import Skill from "../../Skill";
 
 const skillsItems = [{
   title: 'coding languages',
-  listItems: ['HTML', 'CSS/Sass', 'JavaScript (ES6+)', 'PHP', 'GraphQL'],
+  listItems: ['HTML', 'CSS/Sass', 'JavaScript (ES6+)', 'TypeScript', 'PHP', 'GraphQL'],
   image: <img src="/images/layout/lilypad1.svg" alt="" />
 }, {
   title: 'libraries & frameworks',
