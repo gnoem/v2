@@ -1,0 +1,116 @@
+.Skill {
+  --vertical-ul-spacing: 0.75rem;
+  --horizontal-ul-spacing: 1.5rem;
+  display: grid;
+  grid-template-rows: auto;
+  align-items: center;
+}
+
+.Skill:nth-of-type(even) {
+  grid-template-columns: 1fr 250px;
+  grid-template-areas: 'text pic';
+  text-align: right;
+}
+
+.Skill:nth-of-type(even) > div {
+  padding-right: 2rem;
+}
+
+.Skill:nth-of-type(even) ul {
+  justify-content: flex-end;
+}
+
+.Skill:nth-of-type(odd) {
+  grid-template-columns: 250px 1fr;
+  grid-template-areas: 'pic text';
+  text-align: left;
+}
+
+.Skill:nth-of-type(odd) > div {
+  padding-left: 2rem;
+}
+
+.Skill > img {
+  width: 100%;
+  grid-area: pic;
+}
+
+.Skill h3 {
+  font-size: 2rem;
+  color: #2083C5;
+  font-weight: 400;
+  text-transform: lowercase;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #79D9ED;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.Skill ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 1.5rem calc(-1 * var(--horizontal-ul-spacing)) calc(-1 * var(--vertical-ul-spacing)) 0;
+  list-style: none;
+}
+
+.Skill ul li {
+  margin: 0 var(--horizontal-ul-spacing) var(--vertical-ul-spacing) 0;
+  font-family: var(--mono-font);
+  font-size: 1.1rem;
+  letter-spacing: -0.3px;
+  color: #0e4b90;
+}
+
+.Skill ul li svg {
+  display: inline-block;
+  width: 0.3125rem;
+  margin-right: 0.375rem;
+  fill: #16c4e3;
+}
+
+@media screen and (max-width: 1200px) {
+  .Skill h3 {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .Skill {
+    margin: 2rem 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Skill {
+    --vertical-ul-spacing: 0.5rem;
+    --horizontal-ul-spacing: 1rem;
+    display: block;
+  }
+  .Skill h3 {
+    font-size: 1.3rem;
+    height: 70px;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 0;
+  }
+  .Skill:nth-of-type(even) h3 {
+    justify-content: flex-end;
+  }
+  .Skill > img {
+    height: 70px;
+    width: auto;
+    margin: auto;
+  }
+  .Skill ul li {
+    font-size: 1rem;
+  }
+  .Skill:nth-of-type(odd) > img {
+    float: left;
+    margin-right: 1rem;
+  }
+  .Skill:nth-of-type(even) > img {
+    float: right;
+    margin-left: 1rem;
+  }
+}

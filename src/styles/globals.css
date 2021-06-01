@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400&family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --default-font: 'Quicksand', sans-serif;
+  --mono-font: 'Inconsolata', sans-serif;
+  --background-color: #CDFFF5;
+  --smaller-header-size: 4rem;
+  --button-bg-color: #4DE4E2;
+}
+
+html, body, #___gatsby, #___gatsby > div {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: var(--default-font);
+  background: var(--background-color);
+  margin: 0;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+
+h2 {
+  font-size: 5rem;
+  font-weight: normal;
+  text-transform: lowercase;
+  margin: 0 0 1rem;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+button {
+  border: 0;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+section {
+  position: relative;
+  padding: 2rem 10vw;
+}
+
+.wavy {
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    --smaller-header-size: 3rem;
+  }
+  h2 {
+    font-size: 4rem;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  :root {
+    --smaller-header-size: 2.5rem;
+  }
+  h2 {
+    font-size: var(--smaller-header-size);
+  }
+}

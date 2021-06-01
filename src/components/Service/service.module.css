@@ -1,0 +1,90 @@
+@keyframes rotateIcons {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Service {
+  flex: 1 1 215px;
+  text-align: center;
+  margin: 2rem 1rem;
+  background: #EAFFFB;
+  box-shadow: 0.5rem 0.5rem 1rem #9fe8da;
+  padding: 2rem;
+  border-radius: 2rem;
+}
+
+.Service h3 {
+  margin-top: -4.5rem;
+  font-size: 1.5rem;
+  color: #39A5A6;
+  font-weight: 500;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid #9FE8DA;
+  margin-bottom: 1.5rem;
+}
+
+.Service h3 span {
+  width: 5rem;
+  height: 5rem;
+  background: #5AF5F4;
+  background: linear-gradient(160deg, #5AF5F4 0%, #D3A9FF 100%);
+  border: 5px solid #EAFFFB;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.Service h3 svg {
+  height: 2rem;
+  filter: drop-shadow(1px 1px 0px #7899da);
+}
+
+.Service h3 svg * {
+  fill: #fff;
+}
+
+.Service h3 span:hover svg {
+  animation: rotateIcons 1.5s infinite linear;
+}
+
+@media screen and (max-width: 1200px) {
+  .Service {
+    padding: 1rem;
+    margin: 1rem 0.75rem;
+    font-size: 1rem;
+  }
+  .Service h3 {
+    padding-bottom: 0;
+    border-bottom: 0;
+    margin-bottom: 1rem;
+    margin-top: -3.5rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .Service {
+    margin: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Service {
+    margin: 1.5rem 0.75rem;
+  }
+  .Service h3 {
+    margin-top: -3rem;
+  }
+  .Service h3 span {
+    width: 4rem;
+    height: 4rem;
+  }
+  .Service h3 svg {
+    height: 1.5rem;
+  }
+}

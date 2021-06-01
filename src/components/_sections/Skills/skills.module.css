@@ -1,0 +1,27 @@
+.Skills {
+  --header-shadow: #7ad9ed;
+  background: #9AEDFD;
+}
+
+.Skills h2 {
+  color: #138bc3;
+  text-shadow: 0.3rem 0.3rem 0px var(--header-shadow);
+}
+
+.wavy {
+  margin-bottom: -10px;
+}
+
+.SkillTable {
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .Skills {
+    padding: 2rem 5vw;
+  }
+  .Skills h2 {
+    text-shadow: 0.1rem 0.1rem 0px var(--header-shadow);
+    margin-bottom: 0;
+  }
+}

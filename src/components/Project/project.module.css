@@ -1,0 +1,292 @@
+.Project, .OtherProjects > div {
+  --vertical-tag-spacing: 0.5rem;
+  --horizontal-tag-spacing: 1rem;
+  --text-color: #1C6D6E;
+}
+
+.description h4 a {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.blurb a, .OtherProjects .description > a {
+  display: inline-block;
+  font-size: inherit;
+  color: #000;
+  will-change: transform;
+  transition: 0.2s;
+}
+
+.blurb a:hover, .OtherProjects .description > a:hover {
+  transform: translate3d(0.25rem, 0, 0);
+}
+
+.Project {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  margin: 4rem 0;
+}
+
+.Project:first-of-type {
+  margin-top: 2rem;
+}
+
+.Project .preview {
+  grid-row: 1 / 1;
+  padding: 1rem;
+  background: #EAFFFB;
+  box-shadow: 0.5rem 0.5rem 1rem #9fe8da;
+  font-size: 0;
+}
+
+.Project .preview img {
+  width: 100%;
+}
+
+.Project .description {
+  height: 100%;
+  display: flex;
+  color: #067D7F;
+  flex-direction: column;
+  justify-content: center;
+  grid-row: 1 / 1;
+  z-index: 9999;
+}
+
+.Project .description h4 {
+  margin-bottom: 1rem;
+  display: grid;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.Project .description h4 a {
+  grid-area: text;
+  font-size: 2rem;
+  text-shadow: 2px 2px 0 #9fe8da;
+}
+
+.Project .description h4 svg {
+  height: 1rem;
+  grid-area: icon;
+  opacity: 0.7;
+}
+
+.Project .description h4 svg * {
+  fill: var(--text-color);
+}
+
+.Project .description ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  width: 80%;
+  padding: 0;
+  margin: 0 calc(var(--horizontal-tag-spacing) * -1) calc(var(--vertical-tag-spacing) * -1) 0;
+}
+
+.Project .description ul li {
+  font-family: var(--mono-font);
+  font-size: 0.9rem;
+  margin: 0 var(--horizontal-tag-spacing) var(--vertical-tag-spacing) 0;
+}
+
+.Project .links {
+  display: flex;
+}
+
+.Project .links a + a {
+  margin-left: 1rem;
+}
+
+.Project .links a svg {
+  width: 1.2rem;
+}
+
+.Project .links a svg * {
+  fill: #66BEBC;
+}
+
+.Project .blurb {
+  background: #EAFFFB;
+  margin: 1rem 0 1.5rem;
+  box-shadow: 0.5rem 0.5rem 1rem rgb(0 0 0 / 20%);
+  text-align: left;
+  padding: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  text-shadow: none;
+}
+
+.Project:nth-of-type(odd) .preview {
+  grid-column: 1 / 8;
+}
+
+.Project:nth-of-type(odd) .description {
+  grid-column: 7 / -1;
+  text-align: right;
+  align-items: flex-end;
+}
+
+.Project:nth-of-type(odd) .description h4 {
+  grid-template: 'icon text' 100% / auto auto;
+}
+
+.Project:nth-of-type(odd) .description ul {
+  justify-content: flex-end;
+}
+
+.Project:nth-of-type(odd) .links {
+  justify-content: flex-end;
+}
+
+.Project:nth-of-type(even) .preview {
+  grid-column: 6 / -1;
+}
+
+.Project:nth-of-type(even) .description {
+  grid-column: 1 / 7;
+  align-items: flex-start;
+}
+
+.Project:nth-of-type(even) .description h4 {
+  grid-template: 'text icon' 100% / auto auto;
+}
+
+.Project:nth-of-type(even) .description ul {
+  justify-content: flex-start;
+}
+
+.OtherProjects {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2.5rem;
+  margin-right: -2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 100;
+}
+
+.OtherProjects > div {
+  flex: 0 1 30%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  background: #EAFFFB;
+  color: var(--text-color);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0.5rem 0.5rem 1rem #9fe8da;
+}
+
+.OtherProjects .preview {
+  width: 100%;
+  font-size: 0;
+}
+
+.OtherProjects .preview img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.OtherProjects .description {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.OtherProjects .description > div {
+  padding: 1.5rem 1.5rem 0;
+  font-size: 0.8rem;
+  hyphens: auto;
+}
+
+.OtherProjects .description h4 {
+  font-size: 1.3rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.OtherProjects .description > a {
+  padding: 0 1.5rem 1.5rem;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+@media screen and (max-width: 900px) {
+  .Project .preview {
+    padding: 0.5rem;
+  }
+  .Project .blurb {
+    padding: 1rem;
+  }
+  .Project:nth-of-type(odd) .preview {
+    grid-column: 1 / 7;
+  }
+  .Project:nth-of-type(odd) .description {
+    grid-column: 6 / -1;
+  }
+  .Project:nth-of-type(even) .preview {
+    grid-column: 6 / -1;
+  }
+  .Project:nth-of-type(even) .description {
+    grid-column: 1 / 7;
+  }
+  .OtherProjects > div {
+    flex: 0 1 40%;
+  }
+  .OtherProjects .description > div {
+    padding: 1rem 1rem 0;
+  }
+  .OtherProjects .description > a {
+    padding: 0 1rem 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Project {
+    grid-template:
+      'preview'     auto
+      'description' 1fr / 100%;
+  }
+  .Project:nth-of-type(odd) .preview,
+  .Project:nth-of-type(even) .preview {
+    grid-area: preview;
+    margin-bottom: 1.5rem;
+    padding: 0.25rem;
+    background: #fff;
+    grid-column: 1;
+  }
+  .Project:nth-of-type(odd) .description,
+  .Project:nth-of-type(even) .description {
+    grid-area: description;
+    grid-column: 1;
+  }
+  .Project .description > * {
+    width: 100%;
+  }
+  .Project .description h4 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .Project:nth-of-type(even) .description h4 {
+    flex-direction: row-reverse;
+  }
+  .Project .blurb {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+  .OtherProjects > div {
+    flex: 1 0 90%;
+  }
+}

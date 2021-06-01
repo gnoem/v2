@@ -1,0 +1,54 @@
+.Intro {
+  --text-shadow-color: rgb(0 0 0 / 20%);
+  color: #D1FFF6;
+  background: #31946b;
+  text-shadow: 1px 1px 0px var(--text-shadow-color), 1px 1px 5px var(--text-shadow-color);
+}
+
+.Intro h2 {
+  text-shadow: 0.3rem 0.3rem 0px var(--text-shadow-color);
+}
+
+.bio {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  align-items: start;
+}
+
+.bio > img {
+  width: 100%;
+  height: auto;
+  border: 2px solid #fff;
+  border-radius: 999px;
+}
+
+.bio > div {
+  font-size: 1.2rem;
+  margin-left: 1.5rem;
+  padding-left: 1.5rem;
+  border: 1px solid var(--text-shadow-color);
+  border-width: 0 0 0 1px;
+}
+
+@media screen and (max-width: 600px) {
+  .Intro h2 {
+    text-shadow: 0.1rem 0.1rem 0 var(--text-shadow-color);
+  }
+  .bio {
+    display: block;
+    margin-bottom: 2rem;
+  }
+  .bio > img {
+    width: 4rem;
+    border-width: 1px;
+    float: right;
+    margin: 0 0 0.5rem 0.5rem;
+  }
+  .bio > div {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    border-width: 0;
+  }
+}

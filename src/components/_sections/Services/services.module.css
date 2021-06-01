@@ -1,0 +1,55 @@
+.Services {
+  --header-color: #1C999B;
+  --header-shadow: #9ee8d9;
+  --text-color: #067D7F;
+  margin-top: -13vw;
+  color: var(--text-color);
+}
+
+.wavy {
+  position: relative;
+  z-index: 10;
+  margin-top: -10px;
+}
+
+.Services h2 {
+  color: var(--header-color);
+  text-shadow: 0.3rem 0.3rem 0px var(--header-shadow);
+  font-size: var(--smaller-header-size);
+}
+
+.Services > p {
+  width: 85%;
+}
+
+.ServicesGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 2rem -1rem 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .ServicesGrid {
+    margin: 3rem -1rem 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .ServicesGrid {
+    margin: 2rem -1rem 1rem;
+  }
+  .Services > p {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Services h2 {
+    text-shadow: 0.1rem 0.1rem 0 var(--header-shadow);
+  }
+  .Services > p {
+    width: 100%;
+    text-align: center;
+  }
+}

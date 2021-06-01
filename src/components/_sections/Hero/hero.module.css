@@ -1,0 +1,253 @@
+.Hero {
+  --bubble-bg-color: linear-gradient(135deg, #8CB7F1, #8CB7F1);
+  --bubble-text-color: #D2FFF8;
+  --text-shadow-1: #9BFFD1;
+  --text-shadow-2: #EEE0FF;
+  --fog-color: #c2fef4;
+  --dim-opacity: 0.3;
+}
+
+.HeroText h1, .HeroText p, .HeroText.loading .HeroButtons {
+  transition: 1s;
+}
+
+.HeroText.loading h1, .HeroText.loading p {
+  opacity: 0;
+  transform: translate3d(-25%, 0, 0);
+}
+
+.HeroText {
+  position: absolute;
+  z-index: 98;
+  top: 0;
+  left: 0;
+  width: 55%;
+  height: 70%;
+  display: grid;
+}
+
+.HeroText > div {
+  width: 80%;
+  margin: auto;
+}
+
+.HeroText.loading > div > img {
+  opacity: 0;
+  transform: translate3d(0, 50%, 0);
+}
+
+.HeroText > div > img {
+  height: 5rem;
+  will-change: opacity, transform;
+  transition: 0.6s 1.7s;
+  /* animation: bounceIn 1s 4.5s ease 1 forwards; */
+}
+
+.HeroText h1 {
+  font-size: 6rem;
+  font-weight: 200;
+  white-space: nowrap;
+  color: #8ca8f7;
+  text-shadow: 2px 2px 0px var(--text-shadow-1), 4px 4px 0px var(--text-shadow-2);
+  margin: 0;
+  letter-spacing: -0.2rem;
+  will-change: opacity, transform;
+  transition-delay: 0.4s;
+}
+
+.HeroText p {
+  font-size: 1.5rem;
+  color: #819cf8;
+  margin-top: 0.5rem;
+  text-shadow: 1px 1px 0px var(--text-shadow-1), 2px 2px 0px var(--text-shadow-2);
+  will-change: opacity, transform;
+  transition-delay: 0.7s;
+}
+
+.HeroButtons {
+  margin-top: 1.5rem;
+  display: flex;
+}
+
+.HeroText.loading .HeroButtons a {
+  opacity: 0;
+  transform: translate3d(0, -25%, 0);
+}
+
+.HeroButtons a {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  background: var(--bubble-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 0px var(--text-shadow-1), 4px 4px 0px var(--text-shadow-2);
+  cursor: pointer;
+  will-change: opacity, transform;
+  transition: 0.5s;
+}
+
+.HeroButtons a:nth-of-type(1) {
+  transition-delay: 1.1s;
+}
+
+.HeroButtons a:nth-of-type(2) {
+  transition-delay: 1.3s;
+}
+
+.HeroButtons a:nth-of-type(3) {
+  transition-delay: 1.5s;
+}
+
+.HeroButtons a svg {
+  height: 50%;
+  transition: 0.2s;
+}
+
+.HeroButtons a svg * {
+  fill: var(--bubble-text-color);
+}
+
+.HeroButtons a:hover svg {
+  transform: scale(1.2);
+}
+
+.HeroButtons a:not(:last-child) {
+  margin-right: 0.75rem;
+}
+
+.Hero > img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: auto;
+}
+
+.Hero > .dist {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: url('/images/hero/far.svg') bottom left no-repeat;
+  background-size: 100% auto;
+  opacity: 0.2;
+  transform: translate3d(50%, -150%, -2px) scale(4);
+}
+
+.Hero > .bg {
+  width: 100%;
+  margin-bottom: 60vw;
+  transform: translateZ(-2px) scale(3);
+  z-index: 1;
+}
+
+.Hero > .mid {
+  width: 100%;
+  margin-bottom: 20vw;
+  transform: translateZ(-1px) scale(2);
+  z-index: 2;
+}
+
+.Hero > .fg {
+  width: 100%;
+  margin-bottom: -5px;
+  z-index: 3;
+}
+
+.dim, .fog {
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, var(--fog-color) 64%, var(--fog-color) 100%);
+}
+
+.dim {
+  opacity: var(--dim-opacity);
+  will-change: opacity;
+  transition: opacity 0.5s;
+}
+
+.fog {
+  opacity: 1;
+  will-change: opacity, transform;
+  transition: 2.5s;
+}
+
+.fog.hidden {
+  opacity: 0;
+  transform: translate3d(0, -20%, 0);
+}
+
+@media screen and (max-width: 1200px) {
+  .dim {
+    opacity: 0.8;
+  }
+  .fog {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1200px) and (orientation: portrait) {
+  .Hero > .dist {
+    transform: translate3d(50%, -160%, -2px) scale(4);
+  }
+  .HeroText {
+    width: 100%;
+    height: 50%;
+  }
+  .HeroText p {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .HeroText {
+    width: 100%;
+    height: 60%;
+  }
+  .HeroText p {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  .HeroText {
+      width: 60%;
+      height: 80%;
+  }
+  .HeroText h1 {
+      font-size: 3rem;
+      letter-spacing: -0.1rem;
+  }
+  .HeroText p {
+      font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .HeroText {
+    height: 55%;
+  }
+  .HeroText > div > img {
+    height: 3rem;
+  }
+  .HeroText h1 {
+    font-size: 12vw;
+    text-shadow: 1.5px 1.5px 0px var(--text-shadow-1), 3px 3px 0px var(--text-shadow-2);
+    letter-spacing: -0.1rem;
+  }
+  .HeroText p {
+    font-size: 1.1rem;
+  }
+}
+
+@keyframes bounceIn {
+  0% {transform: scale(0)}
+  30% {transform: scale(1.2)}
+  50% {transform: scale(0.8)}
+  70% {transform: scale(1.1)}
+  85% {transform: scale(0.9)}
+  100% {transform: scale(1)}
+}
