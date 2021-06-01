@@ -21,7 +21,7 @@ const Loader: React.FC = (): JSX.Element => {
 
 const LoadingAnimation: React.FC = (): JSX.Element => {
   const radius = 50;
-  const circumference = radius * 2 * Math.PI;
+  const circumference = (radius * 2 * Math.PI) + 5;
   const [dashOffset, setDashOffset] = useState(circumference);
   useEffect(() => {
     setTimeout(() => setDashOffset(0), 1);

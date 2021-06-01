@@ -38,7 +38,7 @@ const projectsList = [{
   wait: true
 }, {
   title: 'TALAS',
-  image: '/images/portfolio/talas.webp',
+  image: '/images/portfolio/talas.png',
   blurb: "Wordpress-based homepage for the Texas Association of Latino Administrators and Superintendents. I built this theme from scratch with HTML, CSS, JavaScript, and PHP.",
   links: {
     primary: 'https://www.talasedu.org'
@@ -66,7 +66,7 @@ const Projects: React.FC = (): JSX.Element => {
         <b>Some notes:</b>
         <ul>
           <li>Projects labeled with a <Clock /> symbol are hosted on Heroku's free tier and may initially take up to 30 seconds to load depending on how much traffic they've gotten in the last half hour. Thanks for your patience!</li>
-          <li>Credit to <a href="https://brittanychiang.com/" target="_blank">Brittany Chiang</a> for providing the layout inspiration for this section!</li>
+          <li>Credit to <a href="https://brittanychiang.com/">Brittany Chiang</a> for providing the layout inspiration for this section!</li>
         </ul>
       </div>
       <h3>Featured projects</h3>

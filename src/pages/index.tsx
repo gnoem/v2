@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "../styles/globals.css";
 import { Codepen, Envelope, Github } from "../components/_icons";
@@ -10,6 +10,18 @@ import Loader from "../components/Loader";
 import AppContextProvider from "../contexts";
 
 const Home: React.FC = (): JSX.Element => {
+  useEffect(() => {
+    const fixLinks = () => {
+      const links = Array.from(document.querySelectorAll('a'));
+      links.forEach(link => {
+        if (link.host !== window.location.host) {
+          link.setAttribute('rel', 'noopener noreferrer');
+          link.setAttribute('target', '_blank');
+        }
+      });
+    }
+    fixLinks();
+  }, []);
   return (
     <AppContextProvider>
       <Homepage>
@@ -17,9 +29,9 @@ const Home: React.FC = (): JSX.Element => {
           <h1>Hi, I'm Naomi!</h1>
           <p>I'm a designer and developer who specializes in building beautiful, interactive websites and web apps.</p>
           <HeroButtons>
-            <a href="https://github.com/gnoem" aria-label="Github" target="_blank"><Github /></a>
-            <a href="https://codepen.io/gnomey" aria-label="Codepen" target="_blank"><Codepen /></a>
-            <a href="mailto:contact@ngw.dev" aria-label="Email" target="_blank"><Envelope /></a>
+            <a href="https://github.com/gnoem" aria-label="Github"><Github /></a>
+            <a href="https://codepen.io/gnomey" aria-label="Codepen"><Codepen /></a>
+            <a href="mailto:contact@ngw.dev" aria-label="Email"><Envelope /></a>
           </HeroButtons>
         </Hero>
         <Content>

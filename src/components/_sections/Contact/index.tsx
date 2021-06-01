@@ -7,7 +7,7 @@ const Contact: React.FC = (): JSX.Element => {
     <ContactLayout>
       <h2>get in touch</h2>
       <p>I'm open to freelance opportunities, especially projects that are weird, unorthodox, or interesting. Drop me a line:</p>
-      <a href="mailto:contact@ngw.dev" target="_blank">contact@ngw.dev</a>
+      <a href="mailto:contact@ngw.dev">contact@ngw.dev</a>
       <p>Hope to hear from you soon!</p>
     </ContactLayout>
   );
