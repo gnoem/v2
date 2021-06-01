@@ -1,6 +1,7 @@
 # v2
 
-- [ ] fade in elements
+- [x] fade in elements
+- [ ] prefers reduced motion
 - [ ] add target blank to all links
 - [ ] lighthouse
 - [ ] fix loader transform

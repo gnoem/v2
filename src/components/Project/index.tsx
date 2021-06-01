@@ -1,7 +1,8 @@
-import React from "react";
-import Description, { Blurb, Links, Tags, Title } from "./Description";
+import React, { useCallback, useState } from "react";
 
 import * as styles from "./project.module.css";
+import { useRevealElement } from "../../hooks";
+import Description, { Blurb, Links, Tags, Title } from "./Description";
 
 interface IProjectOwnProps {
   title: string;
@@ -22,8 +23,13 @@ const Project: React.FC<IProjectOwnProps> = (props): JSX.Element => {
 }
 
 const FeaturedProject: React.FC<IProjectOwnProps> = ({ title, image, blurb, links, tags, wait }): JSX.Element => {
+  const [element, setElement] = useState(null);
+  const ref = useCallback(node => {
+    if (node) setElement(node);
+  }, []);
+  const scaleIn = useRevealElement(element, 'scaleIn');
   return (
-    <div className={styles.Project}>
+    <div className={`${styles.Project} ${scaleIn}`} ref={ref}>
       <Preview {...{ image, title, link: links.primary }} />
       <Description {...{ links, tags }}>
         <Title wait={wait} link={links.primary}>{title}</Title>
@@ -54,8 +60,13 @@ export const OtherProjects: React.FC = ({ children }): JSX.Element => {
 }
 
 const OtherProject: React.FC<IOtherProjectOwnProps> = ({ title, image, blurb, links }): JSX.Element => {
+  const [element, setElement] = useState(null);
+  const ref = useCallback(node => {
+    if (node) setElement(node);
+  }, []);
+  const scaleIn = useRevealElement(element, 'scaleIn');
   return (
-    <div>
+    <div ref={ref} className={scaleIn}>
       <Preview {...{ image, title, link: links.primary }} />
       <Description>
         <div>

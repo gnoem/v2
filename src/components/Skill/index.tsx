@@ -1,7 +1,8 @@
-import React from "react";
-import { CaretRight } from "../_icons";
+import React, { useCallback, useState } from "react";
 
 import * as styles from "./skill.module.css";
+import { useRevealElement } from "../../hooks";
+import { CaretRight } from "../_icons";
 
 interface ISkillOwnProps {
   title: string
@@ -10,8 +11,13 @@ interface ISkillOwnProps {
 }
 
 const Skill: React.FC<ISkillOwnProps> = ({ image, title, listItems }): JSX.Element => {
+  const [element, setElement] = useState(null);
+  const ref = useCallback(node => {
+    if (node) setElement(node);
+  }, []);
+  const slideIn = useRevealElement(element, 'slideIn');
   return (
-    <div className={styles.Skill}>
+    <div className={`${styles.Skill} ${slideIn}`} ref={ref}>
       {image}
       <div>
         <h3>{title}</h3>
