@@ -2,8 +2,9 @@ import React, { useContext, useEffect } from "react";
 
 import * as styles from "./homepage.module.css";
 import { LoadingContext } from "../../../contexts";
+import Head from "../../Head";
 
-const Homepage: React.FC<{ noscroll?: boolean; }> = ({ children, noscroll }): JSX.Element => {
+const Homepage: React.FC<{ noscroll?: boolean; title?: string; }> = ({ children, noscroll, title }): JSX.Element => {
   const { loading } = useContext(LoadingContext) ?? {};
   useEffect(() => {
     if (noscroll) {
@@ -12,9 +13,12 @@ const Homepage: React.FC<{ noscroll?: boolean; }> = ({ children, noscroll }): JS
     }
   }, [noscroll]);
   return (
-    <main className={`${styles.container} ${loading ? styles.loading : ''}`}>
-      {children}
-    </main>
+    <>
+      <Head title={title} />
+      <main className={`${styles.container} ${loading ? styles.loading : ''}`}>
+        {children}
+      </main>
+    </>
   );
 }
 

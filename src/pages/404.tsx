@@ -6,7 +6,7 @@ import { Hero } from "../components/_sections";
 
 const NotFoundPage: React.FC = (): JSX.Element => {
   return (
-    <Homepage noscroll>
+    <Homepage noscroll title="page not found!">
       <Hero>
         <h1>Not found!</h1>
         <p>The page you're looking for doesn't exist on this server.</p>

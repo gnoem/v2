@@ -6,4 +6,4 @@
 - [ ] lighthouse
 - [x] fix loader transform
 - [x] add note about projects!!
-- [ ] `<head>` stuff, favicon/title/meta etc etc, seo, thumbnail
+- [x] `<head>` stuff, favicon/title/meta etc etc, seo, thumbnail
