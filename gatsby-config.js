@@ -5,5 +5,16 @@ module.exports = {
     url: 'https://ngw.dev',
     image: '/thumbnail.png'
   },
-  plugins: [`gatsby-plugin-typescript`, `gatsby-plugin-react-helmet`],
+  plugins: [
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "G-HGX7SPRWPP",
+        includeInDevelopment: false,
+        defaultDataLayer: { platform: "gatsby" }
+      },
+    }
+  ],
 };

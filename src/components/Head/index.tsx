@@ -61,8 +61,6 @@ const Head: React.FC<IHeadProps> = ({ title, description, image }) => {
       <meta name="msapplication-TileColor" content="#603cba" />
       <meta name="theme-color" content="#E2C7FC"></meta>
 
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGX7SPRWPP"></script>
-
     </Helmet>
   );
 }
