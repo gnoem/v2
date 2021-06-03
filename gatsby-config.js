@@ -9,12 +9,12 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
     {
-      resolve: "gatsby-plugin-google-tagmanager",
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        id: "G-HGX7SPRWPP",
-        includeInDevelopment: false,
-        defaultDataLayer: { platform: "gatsby" }
-      },
+        trackingIds: [
+          'G-HGX7SPRWPP'
+        ]
+      }
     }
   ],
 };
