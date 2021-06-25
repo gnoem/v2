@@ -1,3 +1,1 @@
-import useRevealElement from "./useRevealElement";
-
-export { useRevealElement }
+export { default as useRevealElement } from "./useRevealElement";

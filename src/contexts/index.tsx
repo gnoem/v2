@@ -6,9 +6,8 @@ const AppContextProvider: React.FC = ({ children }): JSX.Element => {
     <LoadingContextProvider>
       {children}
     </LoadingContextProvider>
-  );
+  )
 }
 
 export default AppContextProvider;
-
 export { LoadingContext }

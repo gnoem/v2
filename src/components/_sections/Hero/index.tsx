@@ -12,7 +12,7 @@ const Hero: React.FC = ({ children }): JSX.Element => {
       </HeroText>
       <HeroImage loading={loading} />
     </div>
-  );
+  )
 }
 
 const HeroText: React.FC<{ loading?: boolean }> = ({ children, loading }): JSX.Element => {
@@ -23,7 +23,7 @@ const HeroText: React.FC<{ loading?: boolean }> = ({ children, loading }): JSX.E
         {children}
       </div>
     </div>
-  );
+  )
 }
 
 export const HeroButtons: React.FC = ({ children }): JSX.Element => {
@@ -31,11 +31,11 @@ export const HeroButtons: React.FC = ({ children }): JSX.Element => {
     <div className={styles.HeroButtons}>
       {children}
     </div>
-  );
+  )
 }
 
 const HeroImage: React.FC<{ loading?: boolean }> = ({ loading }): JSX.Element => {
-  const [showFog, setShowFog] = useState(loading);
+  const [showFog, setShowFog] = useState<boolean>(loading);
   return (
     <>
       <img alt="" src="/images/hero/far.svg" className={styles.dist} />
@@ -45,11 +45,11 @@ const HeroImage: React.FC<{ loading?: boolean }> = ({ loading }): JSX.Element =>
       <div className={styles.dim}></div>
       {showFog && <Fog selfDestruct={() => setShowFog(false)} />}
     </>
-  );
+  )
 }
 
 const Fog: React.FC<{ selfDestruct: () => void }> = ({ selfDestruct }): JSX.Element => {
-  const [hidden, setHidden] = useState(false);
+  const [hidden, setHidden] = useState<boolean>(false);
   useEffect(() => {
     setTimeout(() => {
       setHidden(true);
@@ -60,7 +60,7 @@ const Fog: React.FC<{ selfDestruct: () => void }> = ({ selfDestruct }): JSX.Elem
   }, []);
   return (
     <div className={`${styles.fog} ${hidden ? styles.hidden : ''}`}></div>
-  );
+  )
 }
 
 export default Hero;

@@ -4,14 +4,14 @@ import * as styles from "./skill.module.css";
 import { useRevealElement } from "../../hooks";
 import { CaretRight } from "../_icons";
 
-interface ISkillOwnProps {
+interface ISkillProps {
   title: string
   listItems: string[]
   image: JSX.Element
 }
 
-const Skill: React.FC<ISkillOwnProps> = ({ image, title, listItems }): JSX.Element => {
-  const [element, setElement] = useState(null);
+const Skill: React.FC<ISkillProps> = ({ image, title, listItems }): JSX.Element => {
+  const [element, setElement] = useState<HTMLElement | undefined>(null);
   const ref = useCallback(node => {
     if (node) setElement(node);
   }, []);
@@ -26,7 +26,7 @@ const Skill: React.FC<ISkillOwnProps> = ({ image, title, listItems }): JSX.Eleme
         </ul>
       </div>
     </div>
-  );
+  )
 }
 
 const SkillTag: React.FC = ({ children }): JSX.Element => {
@@ -35,7 +35,7 @@ const SkillTag: React.FC = ({ children }): JSX.Element => {
       <CaretRight />
       {children}
     </li>
-  );
+  )
 }
 
 export default Skill;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-const useRevealElement = (element, type) => {
-  const [visible, setVisible] = useState(false);
+const useRevealElement = (element: HTMLElement, type: string): string => {
+  const [visible, setVisible] = useState<boolean>(false);
   useEffect(() => {
     if (!element) return;
     const observer = new IntersectionObserver(entries => {

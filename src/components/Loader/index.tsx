@@ -16,13 +16,13 @@ const Loader: React.FC = (): JSX.Element => {
     <div className={styles.Loader}>
       <LoadingAnimation />
     </div>
-  );
+  )
 }
 
 const LoadingAnimation: React.FC = (): JSX.Element => {
   const radius = 50;
   const circumference = (radius * 2 * Math.PI) + 5;
-  const [dashOffset, setDashOffset] = useState(circumference);
+  const [dashOffset, setDashOffset] = useState<number>(circumference);
   useEffect(() => {
     setTimeout(() => setDashOffset(0), 1);
   }, []);
@@ -30,7 +30,7 @@ const LoadingAnimation: React.FC = (): JSX.Element => {
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width={radius * 2} height={radius * 2}>
       <circle cx={radius} cy={radius} r={radius} strokeDasharray={circumference} strokeDashoffset={dashOffset} />
     </svg>
-  );
+  )
 }
 
 export default Loader;

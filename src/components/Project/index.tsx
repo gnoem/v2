@@ -4,7 +4,7 @@ import * as styles from "./project.module.css";
 import { useRevealElement } from "../../hooks";
 import Description, { Blurb, Links, Tags, Title } from "./Description";
 
-interface IProjectOwnProps {
+interface IProjectProps {
   title: string;
   image: string;
   blurb: string;
@@ -17,13 +17,13 @@ interface IProjectOwnProps {
   wait?: boolean;
 }
 
-const Project: React.FC<IProjectOwnProps> = (props): JSX.Element => {
+const Project: React.FC<IProjectProps> = (props): JSX.Element => {
   const { title, image, blurb, links } = props;
   return props.featured ? <FeaturedProject {...props} /> : <OtherProject {...{ title, image, blurb, links }} />;
 }
 
-const FeaturedProject: React.FC<IProjectOwnProps> = ({ title, image, blurb, links, tags, wait }): JSX.Element => {
-  const [element, setElement] = useState(null);
+const FeaturedProject: React.FC<IProjectProps> = ({ title, image, blurb, links, tags, wait }): JSX.Element => {
+  const [element, setElement] = useState<HTMLElement | undefined>(null);
   const ref = useCallback(node => {
     if (node) setElement(node);
   }, []);
@@ -38,10 +38,10 @@ const FeaturedProject: React.FC<IProjectOwnProps> = ({ title, image, blurb, link
         <Tags {...{ tags }} />
       </Description>
     </div>
-  );
+  )
 }
 
-interface IOtherProjectOwnProps {
+interface IOtherProjectProps {
   title: string;
   image: string;
   blurb: string;
@@ -56,11 +56,11 @@ export const OtherProjects: React.FC = ({ children }): JSX.Element => {
     <div className={styles.OtherProjects}>
       {children}
     </div>
-  );
+  )
 }
 
-const OtherProject: React.FC<IOtherProjectOwnProps> = ({ title, image, blurb, links }): JSX.Element => {
-  const [element, setElement] = useState(null);
+const OtherProject: React.FC<IOtherProjectProps> = ({ title, image, blurb, links }): JSX.Element => {
+  const [element, setElement] = useState<HTMLElement | undefined>(null);
   const ref = useCallback(node => {
     if (node) setElement(node);
   }, []);
@@ -76,7 +76,7 @@ const OtherProject: React.FC<IOtherProjectOwnProps> = ({ title, image, blurb, li
         <a href={links.primary}>&raquo; View live</a>
       </Description>
     </div>
-  );
+  )
 }
 
 const Preview: React.FC<{ image: string; link: string; title: string; }> = ({ image, link, title }): JSX.Element => {
@@ -86,7 +86,7 @@ const Preview: React.FC<{ image: string; link: string; title: string; }> = ({ im
         <img src={image} alt={`${title} preview`} />
       </a>
     </div>
-  );
+  )
 }
 
 export default Project;
