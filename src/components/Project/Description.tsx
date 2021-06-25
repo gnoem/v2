@@ -1,7 +1,7 @@
 import React from "react";
 
 import * as styles from "./project.module.css";
-import { Clock, ExternalLink, Github } from "../_icons";
+import { Clock, ExternalLink, Github } from "@components/_icons";
 
 const Description: React.FC = ({ children }): JSX.Element => {
   return (

@@ -1,15 +1,10 @@
 import React, { useCallback, useState } from "react";
 
 import * as styles from "./service.module.css";
-import { useRevealElement } from "../../hooks";
+import { useRevealElement } from "@hooks";
+import { IService } from "@types";
 
-interface IServiceOwnProps {
-  icon: JSX.Element
-  title: string
-  description: string
-}
-
-const Service: React.FC<IServiceOwnProps> = ({ icon, title, description }): JSX.Element => {
+const Service: React.FC<IService> = ({ icon, title, description }): JSX.Element => {
   const [element, setElement] = useState<HTMLElement | undefined>(null);
   const ref = useCallback(node => {
     if (node) setElement(node);

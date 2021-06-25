@@ -1,8 +1,9 @@
 import React from "react";
-import Footer from "../Footer";
-import * as styles from "./content.module.css";
 
-export const Content: React.FC = ({ children }): JSX.Element => {
+import * as styles from "./content.module.css";
+import { Footer } from "@components";
+
+const Content: React.FC = ({ children }): JSX.Element => {
   return (
     <main className={styles.Content}>
       {children}
@@ -10,3 +11,5 @@ export const Content: React.FC = ({ children }): JSX.Element => {
     </main>
   );
 }
+
+export default Content;

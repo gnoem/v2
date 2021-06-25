@@ -3,8 +3,9 @@ import React from "react";
 import * as styles from "./projects.module.css";
 import { Clock } from "../../_icons";
 import Project, { OtherProjects } from "../../Project";
+import { IFeaturedProject } from "@types";
 
-const projectsList = [{
+const projectsList: IFeaturedProject[] = [{
   title: 'Habitat',
   image: '/images/portfolio/habitat.png',
   blurb: "My most recent project, a digital habit tracker. Definitely the coolest thing I've made so far!",

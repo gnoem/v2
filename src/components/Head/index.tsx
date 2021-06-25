@@ -9,7 +9,7 @@ interface IHeadProps {
   image?: string;
 }
 
-const Head: React.FC<IHeadProps> = ({ title, description, image }) => {
+const Head: React.FC<IHeadProps> = ({ title, description, image }): JSX.Element => {
   const { pathname } = useLocation();
   const query = graphql`
   query SEO {

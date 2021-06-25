@@ -1,16 +1,11 @@
 import React, { useCallback, useState } from "react";
 
 import * as styles from "./skill.module.css";
-import { useRevealElement } from "../../hooks";
-import { CaretRight } from "../_icons";
+import { useRevealElement } from "@hooks";
+import { CaretRight } from "@components/_icons";
+import { ISkill } from "@types";
 
-interface ISkillProps {
-  title: string
-  listItems: string[]
-  image: JSX.Element
-}
-
-const Skill: React.FC<ISkillProps> = ({ image, title, listItems }): JSX.Element => {
+const Skill: React.FC<ISkill> = ({ image, title, listItems }): JSX.Element => {
   const [element, setElement] = useState<HTMLElement | undefined>(null);
   const ref = useCallback(node => {
     if (node) setElement(node);

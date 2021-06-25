@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 
 import * as styles from "./loader.module.css";
-import { LoadingContext } from "../../contexts";
+import { LoadingContext } from "@contexts";
 
 const Loader: React.FC = (): JSX.Element => {
   const { setLoading, loadingIcon, selfDestruct } = useContext(LoadingContext);

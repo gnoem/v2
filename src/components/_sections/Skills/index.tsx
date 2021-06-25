@@ -1,9 +1,10 @@
 import React from "react";
 
 import * as styles from "./skills.module.css";
-import Skill from "../../Skill";
+import { Skill } from "@components";
+import { ISkill } from "@types";
 
-const skillsItems = [{
+const skillsItems: ISkill[] = [{
   title: 'coding languages',
   listItems: ['HTML', 'CSS/Sass', 'JavaScript (ES6+)', 'TypeScript', 'PHP', 'GraphQL'],
   image: <img src="/images/layout/lilypad1.svg" alt="" />
@@ -15,7 +16,7 @@ const skillsItems = [{
   title: 'dbs, tools, & platforms',
   listItems: ['MongoDB', 'MySQL', 'PostgreSQL', 'Git', 'Photoshop', 'Illustrator', 'Wordpress', 'Heroku', 'Vercel', 'Netlify'],
   image: <img src="/images/layout/lilypad3.svg" alt="" />
-}];
+}]
 
 const Skills: React.FC = (): JSX.Element => {
   return (
@@ -25,7 +26,7 @@ const Skills: React.FC = (): JSX.Element => {
         {skillsItems.map(props => <Skill {...props} />)}
       </SkillTable>
     </SkillsLayout>
-  );
+  )
 }
 
 const SkillsLayout: React.FC = ({ children }): JSX.Element => {
@@ -36,7 +37,7 @@ const SkillsLayout: React.FC = ({ children }): JSX.Element => {
         {children}
       </section>
     </>
-  );
+  )
 }
 
 const SkillTable: React.FC = ({ children }): JSX.Element => {
@@ -44,7 +45,7 @@ const SkillTable: React.FC = ({ children }): JSX.Element => {
     <div className={styles.SkillTable}>
       {children}
     </div>
-  );
+  )
 }
 
 export default Skills;

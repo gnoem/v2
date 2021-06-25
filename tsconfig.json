@@ -17,7 +17,23 @@
         "name": "typescript-styled-plugin"
       }
     ],
-    "target": "es2015"
+    "target": "es2015",
+    "paths": {
+      "@components": ["components"],
+      "@components/*": ["components/*"],
+
+      "@contexts": ["contexts"],
+      "@contexts/*": ["contexts/*"],
+      
+      "@hooks": ["hooks"],
+      "@hooks/*": ["hooks/*"],
+      
+      "@styles": ["styles"],
+      "@styles/*": ["styles/*"],
+      
+      "@types": ["types"],
+      "@types/*": ["types/*"],
+    }
   },
   "include": ["src", "global", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules/*", "public/*"]

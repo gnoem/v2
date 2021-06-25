@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from "react";
 
 import * as styles from "./homepage.module.css";
-import { LoadingContext } from "../../../contexts";
-import Head from "../../Head";
+import { Head } from "@components";
+import { LoadingContext } from "@contexts";
 
 const Homepage: React.FC<{ noscroll?: boolean; title?: string; }> = ({ children, noscroll, title }): JSX.Element => {
   const { loading } = useContext(LoadingContext) ?? {};

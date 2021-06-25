@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 
 import * as styles from "./hero.module.css";
-import { LoadingContext } from "../../../contexts";
+import { LoadingContext } from "@contexts";
 
 const Hero: React.FC = ({ children }): JSX.Element => {
   const { loading } = useContext(LoadingContext) ?? {};

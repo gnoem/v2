@@ -1,28 +1,16 @@
 import React, { useCallback, useState } from "react";
 
 import * as styles from "./project.module.css";
-import { useRevealElement } from "../../hooks";
+import { useRevealElement } from "@hooks";
 import Description, { Blurb, Links, Tags, Title } from "./Description";
+import { IFeaturedProject, IProject } from "@types";
 
-interface IProjectProps {
-  title: string;
-  image: string;
-  blurb: string;
-  links: {
-    primary?: string;
-    github?: string;
-  };
-  tags: string[];
-  featured?: boolean;
-  wait?: boolean;
-}
-
-const Project: React.FC<IProjectProps> = (props): JSX.Element => {
+const Project: React.FC<IFeaturedProject> = (props): JSX.Element => {
   const { title, image, blurb, links } = props;
   return props.featured ? <FeaturedProject {...props} /> : <OtherProject {...{ title, image, blurb, links }} />;
 }
 
-const FeaturedProject: React.FC<IProjectProps> = ({ title, image, blurb, links, tags, wait }): JSX.Element => {
+const FeaturedProject: React.FC<IFeaturedProject> = ({ title, image, blurb, links, tags, wait }): JSX.Element => {
   const [element, setElement] = useState<HTMLElement | undefined>(null);
   const ref = useCallback(node => {
     if (node) setElement(node);
@@ -41,16 +29,6 @@ const FeaturedProject: React.FC<IProjectProps> = ({ title, image, blurb, links, 
   )
 }
 
-interface IOtherProjectProps {
-  title: string;
-  image: string;
-  blurb: string;
-  links: {
-    primary?: string;
-    github?: string;
-  }
-}
-
 export const OtherProjects: React.FC = ({ children }): JSX.Element => {
   return (
     <div className={styles.OtherProjects}>
@@ -59,7 +37,7 @@ export const OtherProjects: React.FC = ({ children }): JSX.Element => {
   )
 }
 
-const OtherProject: React.FC<IOtherProjectProps> = ({ title, image, blurb, links }): JSX.Element => {
+const OtherProject: React.FC<IProject> = ({ title, image, blurb, links }): JSX.Element => {
   const [element, setElement] = useState<HTMLElement | undefined>(null);
   const ref = useCallback(node => {
     if (node) setElement(node);
