@@ -22,6 +22,9 @@
       "@components": ["components"],
       "@components/*": ["components/*"],
 
+      "@config": ["config"],
+      "@config/*": ["config/*"],
+
       "@contexts": ["contexts"],
       "@contexts/*": ["contexts/*"],
       

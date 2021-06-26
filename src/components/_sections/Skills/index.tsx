@@ -2,21 +2,7 @@ import React from "react";
 
 import * as styles from "./skills.module.css";
 import { Skill } from "@components";
-import { ISkill } from "@types";
-
-const skillsItems: ISkill[] = [{
-  title: 'coding languages',
-  listItems: ['HTML', 'CSS/Sass', 'JavaScript (ES6+)', 'TypeScript', 'PHP', 'GraphQL'],
-  image: <img src="/images/layout/lilypad1.svg" alt="" />
-}, {
-  title: 'libraries & frameworks',
-  listItems: ['Node.js', 'Express', 'React', 'Next.js', 'Gatsby', 'Bootstrap', 'jQuery'],
-  image: <img src="/images/layout/lilypad2.svg" alt="" />
-}, {
-  title: 'dbs, tools, & platforms',
-  listItems: ['MongoDB', 'MySQL', 'PostgreSQL', 'Git', 'Photoshop', 'Illustrator', 'Wordpress', 'Heroku', 'Vercel', 'Netlify'],
-  image: <img src="/images/layout/lilypad3.svg" alt="" />
-}]
+import { skillsItems } from "@config";
 
 const Skills: React.FC = (): JSX.Element => {
   return (

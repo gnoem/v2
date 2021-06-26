@@ -11,7 +11,7 @@ const Intro: React.FC = (): JSX.Element => {
         <p>I've worked extensively with HTML, CSS, and JavaScript, and lately I've been diving deep into web app development with Node.js and React. I code primarily for fun, to challenge myself, and to master new and exciting technologies, but I'm deeply interested in using tech to benefit people and am eager to start getting involved in projects that have purpose, meaning, and potential.</p>
       </Bio>
     </section>
-  );
+  )
 }
 
 const Bio: React.FC = ({ children }): JSX.Element => {
@@ -20,7 +20,7 @@ const Bio: React.FC = ({ children }): JSX.Element => {
       <img alt="me as my animal crossing character" src="/images/me.svg" />
       <div>{children}</div>
     </div>
-  );
+  )
 }
 
 export default Intro;

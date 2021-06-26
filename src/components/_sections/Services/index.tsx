@@ -1,16 +1,8 @@
 import React from "react";
 
 import * as styles from "./services.module.css";
-import { Icons, Service } from "@components";
-import { IService } from "@types";
-
-const { Code, Magic, Palette } = Icons;
-
-const servicesOffered: IService[] = [
-  { icon: <Palette />, title: 'Web Design', description: "I'll draw up a website design that suits your needs well and creates an excellent first impression. You'll get a clean, attractive design that combines your organization's aesthetic with a simple, clear, and consistent user interface." },
-  { icon: <Code />, title: 'Web Development', description: "I'll build you a functional, responsive website from the ground up. If you have a design ready to go, I'll bring it to life with pixel-perfect accuracy; if not, we can work together to create a design that works for you." },
-  { icon: <Magic />, title: 'Digital Marketing', description: "Take your brand to the next level! I'll work with you to develop a unique brand identity and a strong digital presence for your organization. This service is comprehensive and includes art direction, iconography, web design, and SEO." }
-]
+import { Service } from "@components";
+import { servicesOffered } from "@config";
 
 const Services: React.FC = (): JSX.Element => {
   return (
