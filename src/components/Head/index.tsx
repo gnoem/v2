@@ -62,7 +62,7 @@ const Head: React.FC<IHeadProps> = ({ title, description, image }): JSX.Element 
       <meta name="theme-color" content="#E2C7FC"></meta>
 
     </Helmet>
-  );
+  )
 }
 
 export default Head;

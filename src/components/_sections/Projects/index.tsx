@@ -79,7 +79,7 @@ const Projects: React.FC = (): JSX.Element => {
         {otherProjects.map(project => <Project {...project} />)}
       </OtherProjects>
     </ProjectsLayout>
-  );
+  )
 }
 
 const ProjectsLayout: React.FC = ({ children }): JSX.Element => {
@@ -90,7 +90,7 @@ const ProjectsLayout: React.FC = ({ children }): JSX.Element => {
         {children}
       </section>
     </>
-  );
+  )
 }
 
 export default Projects;

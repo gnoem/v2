@@ -1,7 +1,7 @@
-import React, { useCallback, useState } from "react";
+import React from "react";
 
 import * as styles from "./project.module.css";
-import { useRevealElement } from "@hooks";
+import { useNode, useRevealElement } from "@hooks";
 import Description, { Blurb, Links, Tags, Title } from "./Description";
 import { IFeaturedProject, IProject } from "@types";
 
@@ -11,10 +11,7 @@ const Project: React.FC<IFeaturedProject> = (props): JSX.Element => {
 }
 
 const FeaturedProject: React.FC<IFeaturedProject> = ({ title, image, blurb, links, tags, wait }): JSX.Element => {
-  const [element, setElement] = useState<HTMLElement | undefined>(null);
-  const ref = useCallback(node => {
-    if (node) setElement(node);
-  }, []);
+  const [element, ref] = useNode();
   const scaleIn = useRevealElement(element, 'scaleIn');
   return (
     <div className={`${styles.Project} ${scaleIn}`} ref={ref}>
@@ -38,10 +35,7 @@ export const OtherProjects: React.FC = ({ children }): JSX.Element => {
 }
 
 const OtherProject: React.FC<IProject> = ({ title, image, blurb, links }): JSX.Element => {
-  const [element, setElement] = useState<HTMLElement | undefined>(null);
-  const ref = useCallback(node => {
-    if (node) setElement(node);
-  }, []);
+  const [element, ref] = useNode();
   const scaleIn = useRevealElement(element, 'scaleIn');
   return (
     <div ref={ref} className={scaleIn}>

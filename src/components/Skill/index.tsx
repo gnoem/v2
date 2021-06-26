@@ -1,15 +1,12 @@
-import React, { useCallback, useState } from "react";
+import React from "react";
 
 import * as styles from "./skill.module.css";
-import { useRevealElement } from "@hooks";
+import { useNode, useRevealElement } from "@hooks";
 import { CaretRight } from "@components/_icons";
 import { ISkill } from "@types";
 
 const Skill: React.FC<ISkill> = ({ image, title, listItems }): JSX.Element => {
-  const [element, setElement] = useState<HTMLElement | undefined>(null);
-  const ref = useCallback(node => {
-    if (node) setElement(node);
-  }, []);
+  const [element, ref] = useNode();
   const slideIn = useRevealElement(element, 'slideIn');
   return (
     <div className={`${styles.Skill} ${slideIn}`} ref={ref}>

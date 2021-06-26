@@ -11,7 +11,7 @@ const Footer: React.FC = (): JSX.Element => {
         <Seedling />
       </span>
     </div>
-  );
+  )
 }
 
 export default Footer;

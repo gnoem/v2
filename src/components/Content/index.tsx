@@ -9,7 +9,7 @@ const Content: React.FC = ({ children }): JSX.Element => {
       {children}
       <Footer />
     </main>
-  );
+  )
 }
 
 export default Content;

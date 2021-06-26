@@ -10,7 +10,7 @@ const Contact: React.FC = (): JSX.Element => {
       <a href="mailto:contact@ngw.dev">contact@ngw.dev</a>
       <p>Hope to hear from you soon!</p>
     </ContactLayout>
-  );
+  )
 }
 
 const ContactLayout: React.FC = ({ children }): JSX.Element => {
@@ -25,7 +25,7 @@ const ContactLayout: React.FC = ({ children }): JSX.Element => {
         <img className={`${styles.footer} ${styles.right}`} id="footer2" src="/images/layout/footer2.svg" alt="illustration of strange, alien-looking plants" />
       </section>
     </>
-  );
+  )
 }
 
 export default Contact;

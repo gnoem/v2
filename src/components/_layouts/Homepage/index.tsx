@@ -19,7 +19,7 @@ const Homepage: React.FC<{ noscroll?: boolean; title?: string; }> = ({ children,
         {children}
       </main>
     </>
-  );
+  )
 }
 
 export default Homepage;
