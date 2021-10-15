@@ -2,12 +2,11 @@ import React from "react";
 
 import * as styles from "./projects.module.css";
 import { Clock } from "@components/_icons";
-import Project, { OtherProjects } from "@components/Project";
+import Project from "@components/Project";
 import { projectsList } from "@config";
 
 const Projects: React.FC = (): JSX.Element => {
   const featuredProjects = projectsList.filter(project => project.featured);
-  const otherProjects = projectsList.filter(project => !project.featured);
   return (
     <ProjectsLayout>
       <h2>portfolio</h2>
@@ -22,10 +21,6 @@ const Projects: React.FC = (): JSX.Element => {
       <div>
         {featuredProjects.map(project => <Project {...project} />)}
       </div>
-      <h3>Other stuff</h3>
-      <OtherProjects>
-        {otherProjects.map(project => <Project {...project} />)}
-      </OtherProjects>
     </ProjectsLayout>
   )
 }
