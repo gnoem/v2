@@ -6,12 +6,12 @@ import { LoadingContext } from "@contexts";
 const Hero: React.FC = ({ children }): JSX.Element => {
   const { loading } = useContext(LoadingContext) ?? {};
   return (
-    <div className={styles.Hero}>
+    <>
       <HeroText loading={loading}>
         {children}
       </HeroText>
       <HeroImage loading={loading} />
-    </div>
+    </>
   )
 }
 
@@ -38,10 +38,10 @@ const HeroImage: React.FC<{ loading?: boolean }> = ({ loading }): JSX.Element =>
   const [showFog, setShowFog] = useState<boolean>(loading);
   return (
     <>
-      <img alt="" src="/images/hero/far.svg" className={styles.dist} />
-      <img alt="" src="/images/hero/bgcompressed.svg" className={styles.bg} />
-      <img alt="" src="/images/hero/midcompressed.svg" className={styles.mid} />
-      <img alt="" src="/images/hero/fgcompressed.svg" className={styles.fg} />
+      <img data-hero alt="" src="/images/hero/far.svg" className={styles.dist} />
+      <img data-hero alt="" src="/images/hero/bgcompressed.svg" className={styles.bg} />
+      <img data-hero alt="" src="/images/hero/midcompressed.svg" className={styles.mid} />
+      <img data-hero alt="" src="/images/hero/fgcompressed.svg" className={styles.fg} />
       <div className={styles.dim}></div>
       {showFog && <Fog selfDestruct={() => setShowFog(false)} />}
     </>

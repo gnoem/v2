@@ -10,6 +10,13 @@
   --background-color: #CDFFF5;
   --smaller-header-size: 4rem;
   --button-bg-color: #4DE4E2;
+
+  --bubble-bg-color: linear-gradient(135deg, #8CB7F1, #8CB7F1);
+  --bubble-text-color: #D2FFF8;
+  --text-shadow-1: #9BFFD1;
+  --text-shadow-2: #EEE0FF;
+  --fog-color: #c2fef4;
+  --fog-dim-opacity: 0.3;
 }
 
 html, body, #___gatsby, #___gatsby > div {

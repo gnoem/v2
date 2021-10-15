@@ -4,7 +4,7 @@
   --text-shadow-1: #9BFFD1;
   --text-shadow-2: #EEE0FF;
   --fog-color: #c2fef4;
-  --dim-opacity: 0.3;
+  --fog-dim-opacity: 0.3;
 }
 
 .HeroText h1, .HeroText p, .HeroText.loading .HeroButtons {
@@ -121,14 +121,14 @@
   margin-right: 0.75rem;
 }
 
-.Hero > img {
+img[data-hero] {
   position: absolute;
   bottom: 0;
   right: 0;
   height: auto;
 }
 
-.Hero > .dist {
+.dist {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -139,21 +139,21 @@
   transform: translate3d(50%, -150%, -2px) scale(4);
 }
 
-.Hero > .bg {
+.bg {
   width: 100%;
   margin-bottom: 60vw;
   transform: translateZ(-2px) scale(3);
   z-index: 1;
 }
 
-.Hero > .mid {
+.mid {
   width: 100%;
   margin-bottom: 20vw;
   transform: translateZ(-1px) scale(2);
   z-index: 2;
 }
 
-.Hero > .fg {
+.fg {
   width: 100%;
   margin-bottom: -5px;
   z-index: 3;
@@ -168,7 +168,7 @@
 }
 
 .dim {
-  opacity: var(--dim-opacity);
+  opacity: var(--fog-dim-opacity);
   will-change: opacity;
   transition: opacity 0.5s;
 }
@@ -194,7 +194,7 @@
 }
 
 @media screen and (max-width: 1200px) and (orientation: portrait) {
-  .Hero > .dist {
+  .dist {
     transform: translate3d(50%, -160%, -2px) scale(4);
   }
   .HeroText {
