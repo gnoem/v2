@@ -67,7 +67,7 @@ export const skillsItems: ISkill[] = [{
   image: <img src="/images/layout/lilypad1.svg" alt="" />
 }, {
   title: 'libraries & frameworks',
-  listItems: ['Node.js', 'Express', 'React', 'Next.js', 'Gatsby', 'Bootstrap', 'jQuery'],
+  listItems: ['Node.js', 'Express', 'React', 'Redux', 'Three.js', 'Next.js', 'Gatsby', 'Jest', 'Flow'],
   image: <img src="/images/layout/lilypad2.svg" alt="" />
 }, {
   title: 'dbs, tools, & platforms',
